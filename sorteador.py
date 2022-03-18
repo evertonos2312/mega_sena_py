@@ -101,6 +101,9 @@ class SortearMegasena:
             pdf.drawString(self.mp(50),x, 'Números do {}° jogo : {:02d} - {:02d} - {:02d} - {:02d} - {:02d} - {:02d}'.format(jogo + 1,arrayResult[0], arrayResult[1], arrayResult[2], arrayResult[3], arrayResult[4], arrayResult[5]))
             pdf.drawString(self.mp(50),x - self.mp(5), '-' * 65)
             pdf.setTitle(nome_pdf)
+            if x < 60:
+                pdf.showPage()
+                x = self.mp(250)
 
         pdf.save()
         print(f'Foi criado o arquivo PDF em {pastaApp}')
